@@ -1,0 +1,112 @@
+\documentclass[
+	floatfix,
+	aps,
+	pra,
+	twocolumn,
+  	reprint,
+  	superscriptaddress
+]{revtex4-2}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx,import,color,multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{amsmath}
+\usepackage{blindtext}
+\usepackage[german]{babel}
+\usepackage{tikz}
+\usetikzlibrary{trees,shapes.misc, positioning}
+
+
+%--------------------- preamble  ----------------------
+\makeatletter
+\def\Dated@name{Datum: }%
+% \def\Received@name{Received }%
+% \def\Revised@name{Revised }%
+% \def\Accepted@name{Accepted }%
+% \def\Published@name{Published }%
+%...
+\def\andname{und}
+\makeatother
+
+
+%--------------------- todos ----------------------
+%\usepackage[colorinlistoftodos,prependcaption]{todonotes}
+
+% disable todos
+\usepackage[disable]{todonotes}
+%\usepackage[]{todonotes}
+%\presetkeys {todonotes} {inline}{}
+
+\usepackage{cancel}
+\usepackage{soul}
+\newcommand{\todohint}[1]{\hl{#1}}
+
+%--------------------- layout/graphics ------------
+\graphicspath{{./graphics/}}
+\setlength\marginparwidth{2cm} % fixing warning
+
+\tikzset{
+	treenode/.style = {shape=rectangle, rounded corners, draw=black, align=center},
+	product/.style  = {treenode,fill=gray!30}
+}
+
+
+%--------------------- document -------------------
+\begin{document}
+	\title{Beispieltitel}
+	\author{Max Mustermann}
+	 \affiliation{Organisation A}
+	 \author{Max A. Mustermann}
+	  \affiliation{Organisation B}
+	 \author{Max B. Mustermann}
+	 \affiliation{Organisation A}
+	 \author{Max C. Mustermann}
+	  \affiliation{Organisation B}
+	
+	 
+	%\collaboration{COCKPIT 4.0}
+	\date{\today}
+	\begin{abstract}
+		\blindtext
+
+		\begin{description}
+			\item[Themen] KI, 5G, MEC
+		\end{description}
+		
+	\end{abstract}
+		
+	
+	\maketitle
+	
+	\section{\label{sec:level1}Einleitungen}
+	\blindtext
+	\section{\LaTeX}
+	\subsection{Zitate}
+	Es gibt viel Literatur zu \LaTeX und BibTeX, z.B. von \citet{Tadros2013} und \citet{Graetzer1996}.
+	\subsection{Grafiken}
+	\begin{figure}[htbp]
+		\includegraphics[width=\linewidth]{statistic-1564428_640}
+		\caption{Einbindung einer Bilddatei als Grafik \cite{PixabayStatistic2021}}
+	\end{figure}
+	\subsection{Math}
+
+	
+	\begin{align*}
+		f(x) &= x^2\\
+		g(x) &= \frac{1}{x}\\
+		F(x) &= \int^a_b \frac{1}{3}x^3
+	\end{align*}
+	
+	Formel $|C| = |A| \cdot |B|$ im Text.
+
+	\section{Lorem ipsum}
+	\blindtext[5]
+
+
+
+
+\bibliography{bibliography}
+	
+	
+\end{document}
